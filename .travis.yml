@@ -10,6 +10,7 @@ addons:
       - libgtk2.0-dev
       - libdbus-glib-1-dev
       - libasound2-dev
+      - libpulse-dev
 script:
   - cp .travis/mozconfig .mozconfig
   - ./mach build
