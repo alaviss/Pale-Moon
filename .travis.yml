@@ -14,10 +14,11 @@ addons:
       - g++-4.9
       - clang
 env:
-  - CC=clang CXX=clang++
-  - CC=gcc-4.9 CXX=g++-4.9
+  - _COMPILER="CC=clang && CXX=clang++"
+  - _COMPILER="CC=gcc-4.9 && CXX=g++-4.9"
 before_install:
-  - export CC="${CC}" CXX="${CXX}"
+  - eval "$_COMPILER"
+  - export CC CXX
 script:
   - cp .travis/mozconfig .mozconfig
   - ./mach build
