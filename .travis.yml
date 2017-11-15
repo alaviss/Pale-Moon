@@ -2,6 +2,11 @@ language: cpp
 compiler:
   - clang
   - gcc
+addons:
+  apt:
+    packages:
+      - autoconf2.13
+      - yasm
 script:
   - cp .travis/mozconfig .mozconfig
   - ./mach build
