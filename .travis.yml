@@ -1,9 +1,8 @@
 language: cpp
-compiler:
-  - clang
-  - gcc
 addons:
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
     packages:
       - autoconf2.13
       - yasm
@@ -11,6 +10,12 @@ addons:
       - libdbus-glib-1-dev
       - libasound2-dev
       - libpulse-dev
+      - gcc-4.9
+      - g++-4.9
+      - clang
+env:
+  - CC=clang CXX=clang++
+  - CC=gcc-4.9 CXX=g++-4.9
 script:
   - cp .travis/mozconfig .mozconfig
   - ./mach build
