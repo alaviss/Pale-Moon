@@ -13,8 +13,9 @@ addons:
       - gcc-4.9
       - g++-4.9
       - clang
+      - libc++-dev
 env:
-  - _COMPILER="CC=clang && CXX=clang++"
+  - _COMPILER='CC=clang && CXX="clang++ -stdlib=libc++"'
   - _COMPILER="CC=gcc-4.9 && CXX=g++-4.9"
 before_install:
   - eval "$_COMPILER"
