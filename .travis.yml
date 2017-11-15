@@ -9,6 +9,7 @@ addons:
       - yasm
       - libgtk2.0-dev
       - libdbus-glib-1-dev
+      - libasound2-dev
 script:
   - cp .travis/mozconfig .mozconfig
   - ./mach build
